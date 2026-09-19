@@ -1,0 +1,18 @@
+name: slopscan
+description: Grade this repo for AI slop, sketchy agent skills, and hygiene. Fails if the grade is worse than --fail-under.
+author: slopscan
+branding:
+  icon: check-circle
+  color: purple
+inputs:
+  fail-under:
+    description: Fail the workflow if the grade is worse than this (S, A, B, C, D, or F)
+    required: false
+    default: 'C'
+  path:
+    description: Path to scan, relative to the repo root
+    required: false
+    default: '.'
+runs:
+  using: node20
+  main: dist/action.js

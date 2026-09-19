@@ -1,0 +1,32 @@
+{
+  "name": "slopscan",
+  "version": "1.0.0",
+  "description": "Scan any repo for AI slop, sketchy agent skills, and hygiene issues. Get a grade, a badge, and a shareable X card.",
+  "type": "module",
+  "bin": {
+    "slopscan": "bin/slopscan.js"
+  },
+  "scripts": {
+    "test": "node test/run-tests.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai-slop",
+    "code-quality",
+    "mcp",
+    "agent-skills",
+    "security-scanner",
+    "claude-code",
+    "badge",
+    "linter"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "bin",
+    "src",
+    "action.yml"
+  ]
+}
