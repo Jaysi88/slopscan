@@ -1,16 +1,16 @@
-# slopscan 🔍
+# slopgrade 🔍
 
 **How vibed is your repo?** One command grades any GitHub repo for AI slop, sketchy agent skills, and hygiene — then generates a shareable X card so you can roast it (or flex it).
 
 ```bash
-npx slopscan anthropics/skills
+npx slopgrade anthropics/skills
 ```
 
-![slopscan card](example-card.svg)
+![slopgrade card](example-card.svg)
 
 ## Why?
 
-We all paste AI-generated code. Some of us review it. **slopscan tells you which repos did.**
+We all paste AI-generated code. Some of us review it. **slopgrade tells you which repos did.**
 
 It scans for three things:
 
@@ -35,51 +35,51 @@ Score → Grade:
 
 ```bash
 # Scan any public GitHub repo
-npx slopscan owner/repo
+npx slopgrade owner/repo
 
 # Scan your local project
-npx slopscan .
+npx slopgrade .
 
 # Generate a 1200x630 X card (perfect for roasting)
-npx slopscan owner/repo --card
+npx slopgrade owner/repo --card
 
 # Get a badge for your README
-npx slopscan owner/repo --badge-url
+npx slopgrade owner/repo --badge-url
 
 # Gate your CI on it
-npx slopscan . --fail-under B   # exit 1 if worse than B
+npx slopgrade . --fail-under B   # exit 1 if worse than B
 
 # JSON output for scripting
-npx slopscan owner/repo --json
+npx slopgrade owner/repo --json
 ```
 
 ### Badge
 
 ```md
-[![slopscan: A](https://img.shields.io/badge/slopscan-A-3fb950)](https://github.com/Jaysi88/slopscan)
+[![slopgrade: A](https://img.shields.io/badge/slopgrade-A-3fb950)](https://github.com/Jaysi88/slopgrade)
 ```
 
 ## GitHub Action
 
-Add slopscan to CI so the slop never comes back:
+Add slopgrade to CI so the slop never comes back:
 
 ```yaml
-# .github/workflows/slopscan.yml
-name: slopscan
+# .github/workflows/slopgrade.yml
+name: slopgrade
 on: [push, pull_request]
 jobs:
   grade:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Jaysi88/slopscan@v1
+      - uses: Jaysi88/slopgrade@v1
         with:
           fail-under: B
 ```
 
 ## Agent skill security
 
-Agent skills (`SKILL.md`, `mcp.json`, `CLAUDE.md`, `.cursorrules`) are executable instructions for AI agents — and an attack surface. slopscan flags the patterns that matter:
+Agent skills (`SKILL.md`, `mcp.json`, `CLAUDE.md`, `.cursorrules`) are executable instructions for AI agents — and an attack surface. slopgrade flags the patterns that matter:
 
 - `curl | sh` / `irm | iex` — downloads and executes sight-unseen
 - `ignore all previous instructions` — prompt injection
@@ -91,15 +91,15 @@ If a skill trips a **critical** finding, don't install it. Screenshot it. Post i
 
 ## Zero dependencies
 
-Pure Node.js 18+, no `node_modules`, no build step. `npx slopscan` just works.
+Pure Node.js 18+, no `node_modules`, no build step. `npx slopgrade` just works.
 
 ## Development
 
 ```bash
-git clone https://github.com/Jaysi88/slopscan
-cd slopscan
+git clone https://github.com/Jaysi88/slopgrade
+cd slopgrade
 node test/run-tests.js        # 12 tests, no deps
-node bin/slopscan.js .        # dogfood it (we grade ourselves honestly — fixtures included)
+node bin/slopgrade.js .        # dogfood it (we grade ourselves honestly — fixtures included)
 ```
 
 ## FAQ

@@ -38,7 +38,7 @@ export function renderTerminal(report) {
   const lines = [];
 
   lines.push('');
-  lines.push(`  ${c.bold}${c.magenta}slopscan${c.reset} ${c.dim}v1${c.reset}  ${c.bold}${report.target}${c.reset}`);
+  lines.push(`  ${c.bold}${c.magenta}slopgrade${c.reset} ${c.dim}v1${c.reset}  ${c.bold}${report.target}${c.reset}`);
   if (report.meta.stars != null) lines.push(`  ${c.dim}${report.meta.url}  ★ ${report.meta.stars}${c.reset}`);
   lines.push(`  ${c.dim}scanned ${report.stats.filesScanned} files (${Math.round(report.stats.bytesScanned / 1024)} KB)${c.reset}`);
   lines.push('');
@@ -85,9 +85,9 @@ export function renderTerminal(report) {
 
 export function badgeUrl(grade) {
   const color = GRADE_COLORS[grade].slice(1);
-  return `https://img.shields.io/badge/slopscan-${encodeURIComponent(grade)}-${color}`;
+  return `https://img.shields.io/badge/slopgrade-${encodeURIComponent(grade)}-${color}`;
 }
 
 export function badgeMarkdown(grade) {
-  return `[![slopscan: ${grade}](${badgeUrl(grade)})](https://github.com/Jaysi88/slopscan)`;
+  return `[![slopgrade: ${grade}](${badgeUrl(grade)})](https://github.com/Jaysi88/slopgrade)`;
 }

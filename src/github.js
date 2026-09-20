@@ -7,7 +7,7 @@ const API = 'https://api.github.com';
 
 function headers(token) {
   const h = {
-    'User-Agent': 'slopscan-cli',
+    'User-Agent': 'slopgrade-cli',
     Accept: 'application/vnd.github+json',
   };
   if (token) h.Authorization = `Bearer ${token}`;

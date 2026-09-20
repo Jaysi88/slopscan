@@ -4,7 +4,7 @@ import { run } from '../src/index.js';
 const failUnder = process.env['INPUT_FAIL-UNDER'] || 'C';
 const scanPath = process.env['INPUT_PATH'] || '.';
 
-const args = [scanPath, '--card', 'slopscan-card.svg', '--badge-url'];
+const args = [scanPath, '--card', 'slopgrade-card.svg', '--badge-url'];
 if (failUnder) args.push('--fail-under', failUnder);
 
 try {

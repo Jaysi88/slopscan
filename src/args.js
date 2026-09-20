@@ -1,13 +1,13 @@
 const HELP = `
-slopscan — grade any repo for AI slop, sketchy agent skills, and hygiene.
+slopgrade — grade any repo for AI slop, sketchy agent skills, and hygiene.
 
 Usage:
-  slopscan <owner/repo>        Scan a GitHub repo (public, needs no auth)
-  slopscan .                   Scan the current directory
-  slopscan <path>              Scan a local folder
+  slopgrade <owner/repo>        Scan a GitHub repo (public, needs no auth)
+  slopgrade .                   Scan the current directory
+  slopgrade <path>              Scan a local folder
 
 Options:
-  --card [path]       Write a 1200x630 SVG X card (default: slopscan-card.svg)
+  --card [path]       Write a 1200x630 SVG X card (default: slopgrade-card.svg)
   --badge-url         Print the Shields.io badge URL for your README
   --json              Print the full report as JSON
   --fail-under <S|A|B|C|D|F>  Exit 1 if the grade is worse than this
@@ -16,8 +16,8 @@ Options:
   -v, --version       Show version
 
 Examples:
-  npx slopscan anthropics/skills --card --badge-url
-  slopscan . --fail-under B
+  npx slopgrade anthropics/skills --card --badge-url
+  slopgrade . --fail-under B
 `;
 
 export const GRADE_ORDER = ['F', 'D', 'C', 'B', 'A', 'S'];
@@ -43,7 +43,7 @@ export function parseArgs(argv) {
     else if (a === '--card') {
       const next = argv[i + 1];
       if (next && !next.startsWith('-')) { opts.card = next; i++; }
-      else opts.card = 'slopscan-card.svg';
+      else opts.card = 'slopgrade-card.svg';
     } else if (a === '--fail-under') {
       const next = (argv[i + 1] || '').toUpperCase();
       if (!GRADE_ORDER.includes(next)) throw new Error(`--fail-under expects one of ${GRADE_ORDER.join('|')}`);

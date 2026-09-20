@@ -20,7 +20,7 @@ export function buildReport({ name, meta, files, slop, security, hygiene }) {
   const { grade, verdict } = gradeForScore(totalScore);
 
   return {
-    tool: 'slopscan',
+    tool: 'slopgrade',
     target: name,
     meta: meta || {},
     stats: {

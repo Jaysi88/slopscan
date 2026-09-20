@@ -30,7 +30,7 @@ async function scan(name) {
   });
 }
 
-console.log('\nslopscan test suite\n');
+console.log('\nslopgrade test suite\n');
 
 await test('walker finds fixture files', async () => {
   const { files } = await walkLocal(fixture('sloppy'));
@@ -127,7 +127,7 @@ await test('parseRepoRef handles owner/repo and URLs', () => {
 
 await test('parseArgs validates flags', () => {
   const o = parseArgs(['owner/repo', '--card', '--fail-under', 'B', '--json']);
-  assert(o.target === 'owner/repo' && o.card === 'slopscan-card.svg' && o.failUnder === 'B' && o.json, 'parseArgs mismatch');
+  assert(o.target === 'owner/repo' && o.card === 'slopgrade-card.svg' && o.failUnder === 'B' && o.json, 'parseArgs mismatch');
   let threw = false;
   try { parseArgs([]); } catch { threw = true; }
   assert(threw, 'expected error with no target');
@@ -147,7 +147,7 @@ await test('terminal report renders without throwing', async () => {
 });
 
 await test('badge URL encodes grade', () => {
-  assert(badgeUrl('S') === 'https://img.shields.io/badge/slopscan-S-2ea043', 'badge URL mismatch');
+  assert(badgeUrl('S') === 'https://img.shields.io/badge/slopgrade-S-2ea043', 'badge URL mismatch');
 });
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

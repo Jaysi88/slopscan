@@ -1,6 +1,6 @@
-name: slopscan
+name: slopgrade
 description: Grade this repo for AI slop, sketchy agent skills, and hygiene. Fails if the grade is worse than --fail-under.
-author: slopscan
+author: slopgrade
 branding:
   icon: check-circle
   color: purple

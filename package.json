@@ -1,10 +1,10 @@
 {
-  "name": "slopscan",
+  "name": "slopgrade",
   "version": "1.1.0",
   "description": "Scan any repo for AI slop, sketchy agent skills, and hygiene issues. Get a grade, a badge, and a shareable X card.",
   "type": "module",
   "bin": {
-    "slopscan": "bin/slopscan.js"
+    "slopgrade": "bin/slopgrade.js"
   },
   "scripts": {
     "test": "node test/run-tests.js"

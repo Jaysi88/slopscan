@@ -32,7 +32,7 @@ export function renderCard(report) {
   <rect width="1200" height="630" fill="url(#glow)"/>
   <rect x="24" y="24" width="1152" height="582" rx="24" fill="none" stroke="#30363d" stroke-width="2"/>
 
-  <text x="80" y="110" font-family="ui-monospace, monospace" font-size="30" fill="#8b949e">$ npx slopscan ${esc(report.target)}</text>
+  <text x="80" y="110" font-family="ui-monospace, monospace" font-size="30" fill="#8b949e">$ npx slopgrade ${esc(report.target)}</text>
   ${stars ? `<text x="80" y="150" font-family="ui-monospace, monospace" font-size="22" fill="#6e7681">${esc(stars.trim())}</text>` : ''}
 
   <text x="880" y="380" font-family="ui-monospace, monospace" font-size="340" font-weight="bold" fill="${color}">${esc(report.grade)}</text>
@@ -44,8 +44,8 @@ export function renderCard(report) {
 
   <text x="80" y="440" font-family="ui-monospace, monospace" font-size="24" fill="#c9d1d9">${esc(report.verdict)}</text>
 
-  <text x="80" y="560" font-family="ui-monospace, monospace" font-size="26" fill="#6e7681">slopscan — how vibed is your repo?</text>
-  <text x="1120" y="560" text-anchor="end" font-family="ui-monospace, monospace" font-size="26" fill="${color}">github.com/Jaysi88/slopscan</text>
+  <text x="80" y="560" font-family="ui-monospace, monospace" font-size="26" fill="#6e7681">slopgrade — how vibed is your repo?</text>
+  <text x="1120" y="560" text-anchor="end" font-family="ui-monospace, monospace" font-size="26" fill="${color}">github.com/Jaysi88/slopgrade</text>
 </svg>
 `;
 }
